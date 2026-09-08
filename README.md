@@ -1,6 +1,6 @@
 # DoorList - registration desk check-in
 
-**Student:** Wee Khee Ang · **Course:** MGMT 6110 Human-AI Collaboration, SMU MBAI AY2026/27 · **Problem Set 1 (Individual)**
+**Student:** Ang Wee Khee · **Course:** MGMT 6110 Human-AI Collaboration, SMU MBAI AY2026/27 · **Problem Set 1 (Individual)**
 **Live app:** https://doorlist-alpha.vercel.app/ · **Repository:** https://github.com/Wiki1688/DoorList
 **Prompt log:** [PROMPTS.md](PROMPTS.md) · **Reflection:** [REFLECTION.md](REFLECTION.md)
 
