@@ -1,9 +1,8 @@
 # PROMPTS.md - DoorList
 
-**Student:** Wee Khee Ang · **Course:** MGMT 6110 Human-AI Collaboration · **Problem Set 1** (Individual)
+**Student:** Ang Wee Khee · **Course:** MGMT 6110 Human-AI Collaboration · **Problem Set 1** (Individual)
 **User sentence:** A registration-desk volunteer at a 200-person student conference opens this screen to check attendees in as they arrive and flag anyone whose payment is unconfirmed, and knows it worked when the checked-in counter matches the queue in front of them and nobody flagged has a badge.
-**User type:** B, internal. Business function: event operations (registration desk).
-**Live link:** ⟦paste your Vercel production URL, the short one, tested in a private window⟧
+**Live link:** https://doorlist-alpha.vercel.app/
 **Repository:** https://github.com/Wiki1688/DoorList
 **Builder:** Google AI Studio (Build), personal Google account. Sunday 6 - Monday 7 September 2026.
 
@@ -89,7 +88,7 @@ Remove this feature showing Reset to default attendance data. I did not ask for 
 Add the feature to allow the volunteer to flag attendee if they have not paid or if the volunteer clicked the verify and confirmed check-in wrongly. Change nothing else.
 ```
 
-**What came back:** The assistant reported the change as done ⟦paste its exact reply here if you still have it⟧. In the preview nothing new appeared on any row or dialogue, and I could not find any control that flagged an attendee. It did not seem to work. *(Checked later in the repository: the agent wrote a `handleFlagAttendee` function in `App.tsx` and passed it into `DeskScreen.tsx` as `onFlagAttendee`, but never attached it to any button. The feature exists as dead code that nothing calls.)*
+**What came back:** The assistant reported the change as done. In the preview nothing new appeared on any row or dialogue, and I could not find any control that flagged an attendee. It did not seem to work. *(Checked later in the repository: the agent wrote a `handleFlagAttendee` function in `App.tsx` and passed it into `DeskScreen.tsx` as `onFlagAttendee`, but never attached it to any button. The feature exists as dead code that nothing calls.)*
 
 **What I changed next and why:** I assumed my wording was too vague ("flag attendee") and rewrote the request as a precise modification of the Screen 1 behaviour, describing the exact state change I wanted.
 
@@ -101,7 +100,7 @@ Add the feature to allow the volunteer to flag attendee if they have not paid or
 Modify the feature for Screen 1, Desk: Tapping an Unconfirmed attendee does not check them in; it opens a small confirmation asking "Payment confirmed at desk?" with two choices: Confirmed — check in or Cancel. After Confirmed - check in, allow the volunteer to revert the status of the attendee from paid, checked-in to flagged payment unconfirmed. This is to cater to the situation when the volunteer click the verify and confirmed- check in wrongly, as well as any other wrong inputs to the attendees who have been incorrectly categorized as paid.
 ```
 
-**What came back:** Again reported as done ⟦paste reply if available⟧; again nothing visible changed in the preview. Tapping a checked-in attendee still only undid the check-in and left them as Paid. Two attempts, two "done" messages, zero working feature, and from the preview alone I could not tell whether the fault was my wording or the code.
+**What came back:** Again reported as done; again nothing visible changed in the preview. Tapping a checked-in attendee still only undid the check-in and left them as Paid. Two attempts, two "done" messages, zero working feature, and from the preview alone I could not tell whether the fault was my wording or the code.
 
 **What I changed next and why:** Stopped attacking the problem head-on. I decided to move on to the Summary screen and come back to the revert problem by a different route (Prompt 8). This is the moment I most want to remember: I accepted "done" twice without any way to check it.
 
@@ -115,7 +114,7 @@ Add a feature to allow me to showing the % Checked in and in progress bar under 
 
 **What came back:** Works. A "Check-in Progress" card with a percentage and a green bar now sits under the three large numbers on the Summary screen.
 
-**What I changed next and why:** I had removed this exact feature from the Desk in Prompt 2. On reflection the percentage is useful to the registration lead glancing from across the room, but not to the volunteer at the desk, so I moved it rather than deleting it. ⟦Edit if your actual reason differed.⟧ This is a case where the model's unrequested default turned out to be a good idea in the wrong place.
+**What I changed next and why:** I had removed this exact feature from the Desk in Prompt 2. On reflection the percentage is useful to the registration lead glancing from across the room, but not to the volunteer at the desk, so I moved it rather than deleting it. This is a case where the model's unrequested default turned out to be a good idea in the wrong place.
 
 ---
 
@@ -127,7 +126,7 @@ Add in a feature to allow the volunteer to add new attendees in the Desk screen.
 
 **What came back:** Works. A green "Add Attendee" button appeared in the counter card, opening a form (name, organisation, ticket type, payment status). In the repository this is a new 202-line file, `AddAttendeeModal.tsx`.
 
-**What I changed next and why:** ⟦State your real reason - for example: walk-ins happen at every event and the volunteer needs a way to record them; or, this was a step towards being able to correct records after Prompts 4 and 5 failed.⟧ I note that this widens my own scope beyond the master prompt's two jobs, and that my Guardrail "No features I did not list" now had to be relaxed by me rather than broken by the model.
+**What I changed next and why:** As I was using the app, I realized that I should have included the feaature to add new attendees. This will cater for walk-ins which happen most events and the volunteer needs a way to record them. In addition, this was a step towards being able to correct records after Prompts 4 and 5 failed. I note that this widens my own scope beyond the master prompt's two jobs, and that my Guardrail "No features I did not list" now had to be relaxed by me rather than broken by the model.
 
 ---
 
@@ -139,7 +138,7 @@ Add in a feature to allow the volunteer to delete or modify the details of exist
 
 **What came back:** Works. A pencil icon on every row opens an Edit form with a Delete button behind a "Delete {name}?" confirmation. In the repository this is a new 267-line file, `EditAttendeeModal.tsx`. The Edit form's payment-status dropdown can set Paid back to Unconfirmed, which is the revert I failed to get in Prompts 4 and 5.
 
-**What I changed next and why:** ⟦Confirm this was your intent.⟧ It solved the revert problem, but by a route that also lets a volunteer set Unconfirmed to Paid *without* the "Payment confirmed at desk?" dialogue, and lets a volunteer delete a registered attendee entirely. I noticed the bypass only when reviewing the code for this log, not while building. I have left it in for submission and discuss it in REFLECTION.md Q3 and Q4 as the decision I would take back.
+**What I changed next and why:** I opined that I will need this additional feature as it solves the revert problem, but by a route that also lets a volunteer set Unconfirmed to Paid *without* the "Payment confirmed at desk?" dialogue, and lets a volunteer delete a registered attendee entirely. I noticed the bypass only when reviewing the code for this log, not while building. I have left it in for submission and discuss it in REFLECTION.md Q3 and Q4 as the decision I would take back.
 
 ---
 
