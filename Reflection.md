@@ -1,25 +1,18 @@
 # REFLECTION.md workbook - DoorList
 
-This is not the reflection. It is everything you need to write it in about an hour: for each of the five questions, what the rubric is looking for, the evidence from *your* build (with prompt numbers and file names so you can cite them), the argument that follows from that evidence, and the sentences the "Excellent" band explicitly asks for. Write the prose yourself, in first person, in your own words. Target 700 - 1,000 words total; the per-question budgets below add up to about 900.
-
-**Header for the file:**
-
 ```
 # REFLECTION.md - DoorList
-**Student:** Wee Khee Ang · **Course:** MGMT 6110 · **Problem Set 1**
-Repository: https://github.com/Wiki1688/DoorList · Live: ⟦Vercel URL⟧
+**Student:** Ang Wee Khee · **Course:** MGMT 6110 · **Problem Set 1**
+Repository: https://github.com/Wiki1688/DoorList · Live: https://doorlist-alpha.vercel.app/
 ```
 
 ---
 
 ## Q1 - Who are your users, and what changes for them? (~140 words)
 
-**Rubric wants:** external/internal, job title, where, how many; the step-by-step of today without the product; which steps the screen removes or reorders; for internal users, the business function and who owns the step today.
-
 **Your facts (all from your Step 1 slide):**
-- Internal (Type B). Two or three registration-desk volunteers, standing at a table by the entrance, on their phones, during a 45-minute arrival rush for a 200-person student conference.
-- Function: event operations, registration. Step owned today by the registration lead.
-- Today: attendee says name → volunteer scans printed alphabetical list → finds it (or not, if misspelt) → checks the "paid" column printed the night before, already stale → if unclear, WhatsApps the treasurer while the queue waits → highlights the name → hands over badge → at the end the lead counts highlighter marks.
+- Users (internal staff): Registration-desk volunteers, standing at a table by the entrance, on their phones, during a 45-minute arrival rush for a 200-person student conference. The entire registration process is owned today by the registration lead. The function to enhance is the registration process as part of the event operations. 
+- Today: The attendee says name → volunteer scans printed alphabetical list → finds it (or not, if misspelt) → checks the "paid" column printed the night before, already stale → if unclear, WhatsApps the treasurer while the queue waits → highlights the name → hands over badge → at the end the lead counts highlighter marks.
 - Removed: stale printout (data is the list itself), highlighter count (the counter and Summary), treasurer message for the *unambiguous* cases (Paid shows in green).
 - Deliberately kept: the human decision on Unconfirmed arrivals - the dialogue exists precisely so that step stays with a person.
 - One honest limit you found in the code: check-ins are stored in each phone's browser, so two volunteers' phones would not agree. In the real event the lead would still need one device as the master list. Saying this shows you read what was built.
